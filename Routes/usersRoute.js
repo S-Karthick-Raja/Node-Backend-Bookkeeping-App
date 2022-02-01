@@ -123,7 +123,7 @@ usersRoute.get(
   authMiddleware,
   asynHandler(async (req, res) => {
     try {
-      const user = await User.findById(req.user._id).populate('books');
+      const user = await User.findById(req.user._id);
 
       if (!user) throw new Error("You dont't have any profile yet")
 
