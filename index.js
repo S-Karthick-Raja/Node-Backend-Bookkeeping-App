@@ -1,10 +1,9 @@
 const express = require('express');
 const dbConnect = require('./config/dbconnect');
-const  error  = require('./middlewares/errorMiddlewares-Handler');
+const error = require('./middlewares/errorMiddlewares-Handler');
 const usersRoute = require('./Routes/usersRoute');
 const dotenv = require('dotenv');
 const bookRouter = require('./Routes/bookRoute');
-const cors = require("cors");
 
 dotenv.config();
 
@@ -29,8 +28,8 @@ console.log(process.env.JWT_SECRET_KEY);
 app.use(error.errorMiddlewareHandler);
 
 // SERVER
-const PORT = process.env.PORT || 9000 ;
-app.get("/no-cors", (req, res) => {
+const PORT = process.env.PORT || 9000;
+app.get("/", (req, res) => {
   res.send("HELLO WORLD WELCOME");
 });
 
