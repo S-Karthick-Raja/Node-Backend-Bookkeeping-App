@@ -4,6 +4,7 @@ const  error  = require('./middlewares/errorMiddlewares-Handler');
 const usersRoute = require('./Routes/usersRoute');
 const dotenv = require('dotenv');
 const bookRouter = require('./Routes/bookRoute');
+const cors = require("cors");
 
 dotenv.config();
 
@@ -29,7 +30,10 @@ app.use(error.errorMiddlewareHandler);
 
 // SERVER
 const PORT = process.env.PORT || 9000 ;
-app.get("/", (req, res) => {
+app.get("/no-cors", (req, res) => {
   res.send("HELLO WORLD WELCOME");
 });
+
+
+
 app.listen(PORT, () => console.log("App is Started", PORT));
