@@ -120,7 +120,7 @@ usersRoute.get('/',
 // Profile route
 usersRoute.get(
   '/profile',
-  authMiddleware,
+  // authMiddleware,
   asynHandler(async (req, res) => {
     try {
       const user = await User.findById(req.user._id);
