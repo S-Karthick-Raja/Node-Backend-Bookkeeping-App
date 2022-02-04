@@ -4,6 +4,7 @@ const error = require('./middlewares/errorMiddlewares-Handler');
 const usersRoute = require('./Routes/usersRoute');
 const dotenv = require('dotenv');
 const bookRouter = require('./Routes/bookRoute');
+const cors = require('cors')
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app = express();
 // DB Connect
 dbConnect();
 
+app.use(cors());
 // Passing BODY Data
 app.use(express.json());
 
