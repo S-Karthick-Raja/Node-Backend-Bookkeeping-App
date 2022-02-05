@@ -11,9 +11,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  profileurl: {
-    type: String,
-  },
   email: {
     type: String,
     required: true,
